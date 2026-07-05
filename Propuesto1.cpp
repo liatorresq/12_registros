@@ -38,7 +38,7 @@ int main() {
             posMayor = i;
         }
         if (lista[i].sueldo < lista[posMenor].sueldo) {
-            posMenor = i
+            posMenor = i;
         }
     }
     
@@ -50,7 +50,7 @@ int main() {
     
     cout << "\nEMPLEADO CON MENOR SUELDO:" << endl;
     cout << "Nombre: " << lista[posMenor].nombres << endl;
-    cout << "Sexo: " << lista[posMenor].seco << endl;
+    cout << "Sexo: " << lista[posMenor].sexo << endl;
     cout << "Sueldo: " << lista[posMenor].sueldo << endl;
     
     return 0;
