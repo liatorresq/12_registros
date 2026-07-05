@@ -16,33 +16,34 @@ int main() {
     cout << "Ingrese la cantidad de empleados: ";
     cin >> n;
 
-    Empleado E[n]; 
+    Empleado E[100]; 
 
-    for (int i = 1; i <= n; i++) {
-        cout << "\n--- Registro del empleado " << i << " ---\n";
+    for (int i = 0; i < n; i++) {
+        cout << "\n--- Registro del empleado " << (i + 1)<< " ---\n";
         cout << "Ingrese numero: ";
         cin >> E[i].numero;
         cout << "Ingrese nombres: ";
         cin >> E[i].nombres;
         
-        for (int j = 1; j <= 12; j++) {
-            cout << "Venta del mes " << j << ": ";
+        for (int j = 0; j < 12; j++) {
+            cout << "Venta del mes " << (j + 1) << ": ";
             cin >> E[i].ventas[j];
         }
         
         cout << "Ingrese salario: ";
         cin >> E[i].salario;
     }
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= 12; j++) {
+    for (int i = 0; i < n; i++) {
+        E[i].suma = 0; 
+        for (int j = 0; j < 12; j++) {
             E[i].suma = E[i].suma + E[i].ventas[j];
         }
     }
-    int max = E[1].suma;
-    int nume1 = E[1].numero;
-    string nombe1 = E[1].nombres;
+    int max = E[0].suma;
+    int nume1 = E[0].numero;
+    string nombe1 = E[0].nombres;
 
-    for (int i = 2; i <= n; i++) {
+    for (int i = 1; i < n; i++) {
         if (E[i].suma > max) {
             max = E[i].suma;
             nume1 = E[i].numero;
@@ -51,7 +52,7 @@ int main() {
     }
 
     cout << "\nEmpleado con mas ventas: " << nume1 << " - " << nombe1 << endl;
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         if (E[i].suma > 100) {
             E[i].salario = 1.1 * E[i].salario;
         }
