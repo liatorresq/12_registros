@@ -31,12 +31,13 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         if (lista[i].edad > 50) {
-            mayores50++
+            mayores50++;
         }
         sumaEdades = sumaEdades + lista[i].edad;
     }
 
-    int promedio = sumaEdades / n;
+    float promedio;
+    promedio = sumaEdades * 1.0 / n;
 
     cout << "\n================ RESULTADOS ================" << endl;
     cout << "Cantidad de personas mayores de 50 anos: " << mayores50 << endl;
@@ -46,7 +47,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cout << "Persona " << i + 1 << ": " << lista[i].nombres;
         cout << " - DNI: " << lista[i].dni;
-        cout << " - Edad: " << lista[i].edades << endl;
+        cout << " - Edad: " << lista[i].edad << endl;
     }
 
     return 0;
