@@ -31,8 +31,7 @@ int main() {
 
     int mesBuscado;
     
-    // Bucle para buscar repetidamente por mes
-    while (mesBuscado == 0) { 
+    do{
         cout << "\nIngrese el numero de mes a buscar (o 0 para salir): ";
         cin >> mesBuscado;
 
@@ -42,16 +41,16 @@ int main() {
 
             for (int i = 0; i < n; i++) {
                 if (lista[i].mes == mesBuscado) {
-                    cout << "- " << lista[i].nombre << " (" << lista[i].dia << "/" << lista[i].mes << "/" << lista[i].anio << ")" << endl
+                    cout << "- " << lista[i].nombre << " (Nacio el: " << lista[i].dia << "/" << lista[i].mes << "/" << lista[i].anio << ")" << endl;
                     encontrado = true;
                 }
             }
 
-            if (!encontrado) {
+            if (encontrado == false) {
                 cout << "No hay personas que cumplan anios en este mes." << endl;
             }
         }
-    }
+    } while (mesBuscado != 0);
 
     cout << "\nPrograma finalizado. ¡Hasta luego!" << endl;
     return 0;
