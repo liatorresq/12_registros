@@ -20,7 +20,7 @@ int main()
 
     Atleta atleta[100];
 
-    for(int i=0; i<=n; i++)
+    for(int i=0; i< n; i++)
     {
         cout << "\nAtleta " << i+1 << endl;
 
@@ -48,7 +48,7 @@ int main()
 
     for(int i=0; i<n; i++)
     {
-        if(atleta[i].pais = buscar)
+        if(atleta[i].pais == buscar)
         {
             cout << atleta[i].nombre << endl;
             cout << atleta[i].disciplina << endl;
